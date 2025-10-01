@@ -1,0 +1,14 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model MyCvMvcApp.Models.TaxModel
+@{
+    ViewData["Title"] = "Tax Calculator";
+}
+<h1>Tax Calculator</h1>
+<p>This is a tax calculation example that calculates tax approximately based on tax rates in Türkiye.</p>
+<form asp-action="Calculate" method="post">
+    <label>Income: </label>
+    <input asp-for="Income" type="number" step="any" min="1" />
+    <button type="submit">Calculate</button>
+</form>
