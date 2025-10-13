@@ -1,0 +1,22 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model IEnumerable<MyCvMvcApp.Models.PhotoModel>
+<h2>Photo Gallery</h2>
+
+<form asp-action="Upload" method="post" enctype="multipart/form-data">
+    <input type="file" name="file" />
+    <button type="submit">Upload</button>
+</form>
+
+<hr />
+
+<div style="display:flex; flex-wrap:wrap;">
+    @foreach (var photo in Model)
+    {
+        <div style="margin:10px;">
+            <img src="@photo.FilePath" alt="@photo.FileName" width="200" />
+            <p>@photo.UploadDate.ToShortDateString()</p>
+        </div>
+    }
+</div>
