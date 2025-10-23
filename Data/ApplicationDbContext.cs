@@ -9,4 +9,11 @@ public class ApplicationDbContext : DbContext
     }
 
     public DbSet<PhotoModel> Photos { get; set; }
+
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        base.OnModelCreating(modelBuilder);
+
+        modelBuilder.Entity<PhotoModel>().ToTable("Photos", "dbo");
+    }
 }
