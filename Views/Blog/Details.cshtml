@@ -1,0 +1,10 @@
+﻿@model MyCvMvcApp.Models.BlogModel
+
+<h2>@Model.Title</h2>
+<small>By @Model.Author on @Model.CreatedAt.ToString("dd MMM yyyy")</small>
+<hr />
+<p>@Model.Content</p>
+
+<p>
+    <a class="btn btn-primary" asp-action="Index">Back to Blog</a>
+</p>

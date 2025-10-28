@@ -9,6 +9,8 @@ public class ApplicationDbContext : DbContext
     }
 
     public DbSet<PhotoModel> Photos { get; set; }
+    public DbSet<ContactFormModel> ContactForms { get; set; }
+    public DbSet<BlogModel> BlogPosts { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
